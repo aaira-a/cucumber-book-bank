@@ -32,9 +32,19 @@ class Teller
   end
 end
 
+class CashSlot
+  def contents
+    raise("I'm empty")
+  end
+end
+
 module KnowsMyAccount
   def my_account
     @my_account ||= Account.new
+  end
+
+  def cash_slot
+    @cash_slot ||= CashSlot.new
   end
 end
 
