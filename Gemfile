@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :build do
-  gem 'bundler', '1.15.4'
+  gem 'bundler', '1.16.0'
 end
 
 group :test do
