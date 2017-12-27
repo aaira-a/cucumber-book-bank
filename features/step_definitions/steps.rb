@@ -9,7 +9,7 @@ Given(/^I have deposited \$(#{CAPTURE_CASH_AMOUNT}) in my account$/) do |amount|
     "Expected the balance to be #{amount} but it was #{my_account.balance}"
 end
 
-When(/^I request \$(\d+)$/) do |arg1|
+When(/^I withdraw \$(\d+)$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
