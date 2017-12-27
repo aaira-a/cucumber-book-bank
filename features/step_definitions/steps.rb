@@ -13,8 +13,8 @@ When(/^I withdraw \$(#{CAPTURE_CASH_AMOUNT})$/) do |amount|
   teller.withdraw_from(my_account, amount)
 end
 
-Then(/^\$(\d+) should be dispensed$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^\$(#{CAPTURE_CASH_AMOUNT}) should be dispensed$/) do |amount|
+  expect(cash_slot.contents).to eq(amount)
 end
 
 class Account
