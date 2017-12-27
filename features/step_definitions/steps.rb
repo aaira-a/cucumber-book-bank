@@ -1,5 +1,5 @@
-Given(/^I have deposited \$(\d+) in my account$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^I have deposited \$(\d+) in my account$/) do |amount|
+  Account.new(amount.to_i)
 end
 
 When(/^I request \$(\d+)$/) do |arg1|
