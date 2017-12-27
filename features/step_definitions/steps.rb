@@ -9,7 +9,6 @@ Given(/^I have deposited \$(#{CAPTURE_CASH_AMOUNT}) in my account$/) do |amount|
 end
 
 When(/^I withdraw \$(#{CAPTURE_CASH_AMOUNT})$/) do |amount|
-  teller = Teller.new
   teller.withdraw_from(my_account, amount)
 end
 
@@ -28,19 +27,32 @@ class Account
 end
 
 class Teller
+  def initialize(cash_slot)
+    @cash_slot = cash_slot
+  end
+
   def withdraw_from(account, amount)
+    @cash_slot.dispense(amount)
   end
 end
 
 class CashSlot
   def contents
-    raise("I'm empty")
+    @contents or raise("I'm empty")
+  end
+
+  def dispense(amount)
+    @contents = amount
   end
 end
 
 module KnowsMyAccount
   def my_account
     @my_account ||= Account.new
+  end
+
+  def teller
+    @teller ||= Teller.new(cash_slot)
   end
 
   def cash_slot
