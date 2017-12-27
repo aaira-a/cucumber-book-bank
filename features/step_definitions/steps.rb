@@ -9,3 +9,8 @@ end
 Then(/^\$(\d+) should be dispensed$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
+
+class Account
+  def initialize(amount)
+  end
+end
