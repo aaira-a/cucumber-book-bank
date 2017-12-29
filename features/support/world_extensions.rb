@@ -19,7 +19,7 @@ module KnowsTheUserInterface
   end
 
   def cash_slot
-    @cash_slot ||= CashSlot.new
+    Sinatra::Application.cash_slot
   end
 end
 
