@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 group :application do
+  gem 'activerecord', '5.0.0.1'
   gem 'sinatra', '2.0.0.beta.2'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :build do
