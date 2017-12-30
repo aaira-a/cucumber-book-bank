@@ -10,6 +10,7 @@ end
 
 group :test do
   gem 'capybara', '2.9.1'
+  gem 'childprocess', '0.8.0'
   gem 'cucumber', '3.0.0.pre.1'
   # gem 'launchy', '2.4.3'
   gem 'rspec', '3.5.0'
